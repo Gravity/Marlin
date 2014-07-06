@@ -460,9 +460,9 @@ static void lcd_implementation_status_screen()
 #  else
     lcd.setCursor(0,1);
     lcd.print('X');
-    lcd.print(ftostr3(current_position[X_AXIS]));
+    lcd.print(ftostr30(current_position[X_AXIS]));
     lcd_printPGM(PSTR(" Y"));
-    lcd.print(ftostr3(current_position[Y_AXIS]));
+    lcd.print(ftostr30(current_position[Y_AXIS]));
 #  endif//EXTRUDERS > 1 || TEMP_SENSOR_BED != 0
 # endif//LCD_WIDTH > 19
     lcd.setCursor(LCD_WIDTH - 8, 1);
@@ -726,7 +726,9 @@ static void lcd_implementation_quick_feedback()
       WRITE(BEEPER,LOW);
       delayMicroseconds(100);
     }
+
     #else
+
     for(int8_t i=0;i<(LCD_FEEDBACK_FREQUENCY_DURATION_MS / (1000 / LCD_FEEDBACK_FREQUENCY_HZ));i++)
     {
       WRITE(BEEPER,HIGH);
@@ -734,6 +736,7 @@ static void lcd_implementation_quick_feedback()
       WRITE(BEEPER,LOW);
       delayMicroseconds(1000000 / LCD_FEEDBACK_FREQUENCY_HZ / 2);
     }
+
     #endif
 #endif
 }
