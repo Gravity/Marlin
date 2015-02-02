@@ -397,7 +397,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
   // these are the offsets to the probe relative to the extruder tip (Hotend - Probe)
   #define X_PROBE_OFFSET_FROM_EXTRUDER -1.0
   #define Y_PROBE_OFFSET_FROM_EXTRUDER 12.6
-  #define Z_PROBE_OFFSET_FROM_EXTRUDER -7.3
+  #define Z_PROBE_OFFSET_FROM_EXTRUDER -7.4
 
   #define Z_RAISE_BEFORE_HOMING 4       // (in mm) Raise Z before homing (G28) for Probe Clearance.
                                         // Be sure you have this distance over your Z_MAX_POS in case
@@ -474,8 +474,8 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 #define XYZ_STEPS (XYZ_FULL_STEPS_PER_ROTATION * XYZ_MICROSTEPS / double(XYZ_BELT_PITCH) / double(XYZ_PULLEY_TEETH))
 
 #define DEFAULT_AXIS_STEPS_PER_UNIT   {XYZ_STEPS, XYZ_STEPS, XYZ_STEPS, 486.60}
-#define DEFAULT_MAX_FEEDRATE          {500, 500, 5, 70}    // (mm/sec)
-#define DEFAULT_MAX_ACCELERATION      {9000,9000,50,900}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
+#define DEFAULT_MAX_FEEDRATE          {500, 500, 500, 70}    // (mm/sec)
+#define DEFAULT_MAX_ACCELERATION      {5000,5000,5000,900}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
 
 #define DEFAULT_ACCELERATION          3000    // X, Y, Z and E max acceleration in mm/s^2 for printing moves
 #define DEFAULT_RETRACT_ACCELERATION  900   // X, Y, Z and E max acceleration in mm/s^2 for retracts
@@ -488,7 +488,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 
 // The speed change that does not require acceleration (i.e. the software might assume it can be done instantaneously)
 #define DEFAULT_XYJERK                16.0    // (mm/sec)
-#define DEFAULT_ZJERK                 0.4    // (mm/sec)
+#define DEFAULT_ZJERK                 16.0    // (mm/sec)
 #define DEFAULT_EJERK                 2.5    // (mm/sec)
 
 //===========================================================================
